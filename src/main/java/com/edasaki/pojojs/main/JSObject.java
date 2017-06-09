@@ -7,7 +7,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JSObject {
     /**
-     * @return the filename to output
+     * @return the filename to getOutput
      */
     String value() default "";
 }

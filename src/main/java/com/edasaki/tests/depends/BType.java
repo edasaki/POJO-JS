@@ -6,7 +6,7 @@ import com.edasaki.pojojs.main.JSProperty;
 import static com.edasaki.pojojs.main.JSProperty.*;
 
 @JSObject
-public class SomeObject {
+public class BType {
     @JSProperty(JSType.STRING)
     public String blah = "hi";
 
@@ -16,7 +16,7 @@ public class SomeObject {
     @JSProperty(JSType.NUMBER)
     public double someDouble = 3.0;
 
-    public SomeObject() {
+    public BType() {
 
     }
 }
