@@ -1,8 +1,6 @@
 package com.edasaki.pojojs.main;
 
-import com.edasaki.tests.SomeObject;
 import org.reflections.Reflections;
-import org.reflections.scanners.FieldAnnotationsScanner;
 import org.reflections.scanners.SubTypesScanner;
 import org.reflections.scanners.TypeAnnotationsScanner;
 
@@ -10,7 +8,8 @@ import java.lang.reflect.Field;
 import java.util.Set;
 
 public class PojoJsProcessor {
-    public static void process(String packageName, Object o) {
+
+    public static void process(String packageName) {
         Reflections reflections = new Reflections(packageName, new TypeAnnotationsScanner(), new SubTypesScanner());
         Set<Class<?>> annotated = reflections.getTypesAnnotatedWith(JSObject.class);
         for (Class<?> c : annotated) {
@@ -29,6 +28,11 @@ public class PojoJsProcessor {
     }
 
     public static void main(String[] args) {
-        process("com.edasaki", new SomeObject());
+        if (args.length == 0) {
+            args = new String[]{"com.edasaki"};
+        }
+        for (String s : args) {
+            process(s);
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.edasaki.tests;
+package com.edasaki.tests.depends;
 
 import com.edasaki.pojojs.main.JSObject;
 import com.edasaki.pojojs.main.JSProperty;
